@@ -1,16 +1,17 @@
 from functions.draw_number import draw_number
 
 
-def get_new_score(current_score, game):
+def get_new_score(current_score, game, end_draw):
     """
     :param current_score: int current score
     :param game: int game round
+    :param end_draw: int end draw
     :return: int new game score
     """
     start_draw = 1
-    end_draw = 6
-    throws = 2
-    new_draw = draw_number(start_draw, end_draw, throws)
+    new_draw = 0
+    new_draw += draw_number(start_draw, end_draw)
+
     if game > 1:
         if new_draw == 7:
             new_score = current_score // 7
